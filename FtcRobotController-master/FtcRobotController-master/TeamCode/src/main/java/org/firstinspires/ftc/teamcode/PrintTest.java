@@ -10,7 +10,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.util.Range;
 
-@TeleOp(name="DriveAndWorkDaddy", group="Teleop")
+@TeleOp(name="Drive", group="Teleop")
 // Hi Patrick can you hear me?
 
 public class PrintTest extends OpMode {
