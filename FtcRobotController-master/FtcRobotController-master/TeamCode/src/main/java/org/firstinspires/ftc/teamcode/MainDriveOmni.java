@@ -4,7 +4,6 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 import static java.lang.Thread.sleep;
@@ -64,14 +63,15 @@ public class MainDriveOmni extends OpMode {
 
     @Override
     public void loop() {
+        //First gamepad if statement cannot be commented or code will not work. Unknown reason.
 
-        if (gamepad1.dpad_up){
-            Drive_LeftFront.setPower(driveMotorPower);
-            Drive_LeftRear.setPower(driveMotorPower);
-            Drive_RightFront.setPower(driveMotorPower);
-            Drive_RightRear.setPower(driveMotorPower);
+        if (gamepad1.right_bumper) {
+            Drive_RightFront.setPower(1);
+        } else {
+            Drive_RightFront.setPower(0);
         }
-        else if (gamepad1.dpad_down) {
+
+        if (gamepad1.dpad_down) {
             Drive_LeftFront.setPower(-driveMotorPower);
             Drive_LeftRear.setPower(-driveMotorPower);
             Drive_RightFront.setPower(-driveMotorPower);
@@ -82,6 +82,45 @@ public class MainDriveOmni extends OpMode {
             Drive_RightFront.setPower(0);
             Drive_RightRear.setPower(0);
         }
+
+        if (gamepad1.dpad_right) {
+            Drive_LeftFront.setPower(-driveMotorPower);
+            Drive_LeftRear.setPower(driveMotorPower);
+            Drive_RightFront.setPower(driveMotorPower);
+            Drive_RightRear.setPower(-driveMotorPower);
+        } else {
+            Drive_LeftFront.setPower(0);
+            Drive_LeftRear.setPower(0);
+            Drive_RightFront.setPower(0);
+            Drive_RightRear.setPower(0);
+        }
+
+        if (gamepad1.dpad_left) {
+            Drive_LeftFront.setPower(driveMotorPower);
+            Drive_RightRear.setPower(driveMotorPower);
+            Drive_LeftRear.setPower(-driveMotorPower);
+            Drive_RightFront.setPower(-driveMotorPower);
+        } else {
+            Drive_LeftFront.setPower(0);
+            Drive_LeftRear.setPower(0);
+            Drive_RightFront.setPower(0);
+            Drive_RightRear.setPower(0);
+        }
+
+        if (gamepad1.dpad_up) {
+            Drive_LeftFront.setPower(driveMotorPower);
+            Drive_LeftRear.setPower(driveMotorPower);
+            Drive_RightFront.setPower(driveMotorPower);
+            Drive_RightRear.setPower(driveMotorPower);
+        } else {
+            Drive_LeftFront.setPower(0);
+            Drive_LeftRear.setPower(0);
+            Drive_RightFront.setPower(0);
+            Drive_RightRear.setPower(0);
+        }
+
+
+
        /* else if (gamepad1.dpad_left){
             Drive_LeftFront.setPower(driveMotorPower);
             Drive_LeftRear.setPower(-driveMotorPower);
@@ -150,9 +189,9 @@ public class MainDriveOmni extends OpMode {
         */
 
     }
-    @Override
-    public void stop() {
-    }
+        @Override
+        public void stop () {
+        }
 
 
 

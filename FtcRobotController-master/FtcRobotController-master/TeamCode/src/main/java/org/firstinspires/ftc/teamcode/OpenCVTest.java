@@ -82,12 +82,7 @@ public class OpenCVTest extends LinearOpMode
             telemetry.update();
 
 
-            if(gamepad1.a)
-            {
 
-
-
-            }
 
             /*
              * For the purposes of this sample, throttle ourselves to 10Hz loop to avoid burning
