@@ -25,10 +25,21 @@ public class RedDetectionAuto extends LinearOpMode {
 
         waitForStart();
         switch (detector.getLocation()){
-            case LEFT:
+            case LEFT1:
                 break;
-            case RIGHT:
-
+            case LEFT2:
+                break;
+            case LEFT3:
+                break;
+            case LEFT4:
+                break;
+            case RIGHT1:
+                break;
+            case RIGHT2:
+                break;
+            case RIGHT3:
+                break;
+            case RIGHT4:
                 break;
 
             case NOT_FOUND:
